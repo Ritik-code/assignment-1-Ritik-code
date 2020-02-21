@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ContactLists.iml" filepath="$PROJECT_DIR$/ContactLists.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ritik_Contact_List_App/Ritik_Contact_List_App.iml" filepath="$PROJECT_DIR$/Ritik_Contact_List_App/Ritik_Contact_List_App.iml" />
     </modules>
   </component>
 </project>
