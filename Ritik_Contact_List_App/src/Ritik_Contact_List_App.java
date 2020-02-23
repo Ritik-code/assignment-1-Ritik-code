@@ -1,11 +1,7 @@
 /*packages used in this code.*/
-import  java.lang.*;
+
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 class Ritik_Contact_List_App {                                          //Implementation class
@@ -171,6 +167,7 @@ class Ritik_Contact_List_App_Main                            //main method class
     public static void main(String[] args) {                //main method.
 
         int i = 0;
+        int choice = 0;
         Ritik_Contact_List_App obj = new Ritik_Contact_List_App();     //creating object of implementation class.
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -179,7 +176,12 @@ class Ritik_Contact_List_App_Main                            //main method class
             System.out.println("Press 3 to search for a contact.");
             System.out.println("Press 4 to delete a contact.");
             System.out.println("Press 5 to exit program.");
-            int choice = sc.nextInt();                                     //reading the choice of user as input.
+            try {
+                choice = sc.nextInt();                      //reading the choice of user as input.
+            } catch (Exception e) {
+                System.out.println("Enter numerical option only.");
+                break;
+            }
             switch (choice) {
                 case 1:
                     obj.addContact();
