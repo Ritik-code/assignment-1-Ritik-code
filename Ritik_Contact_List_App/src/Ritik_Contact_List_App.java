@@ -1,8 +1,11 @@
 /*packages used in this code.*/
 import  java.lang.*;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 class Ritik_Contact_List_App {                                          //Implementation class
@@ -19,9 +22,9 @@ class Ritik_Contact_List_App {                                          //Implem
         person.setLast_Name(sc.next());                                  //taking person's last name input from user.
         System.out.print("Contact Number: ");
         person.setArr(sc.nextLong());                                     //taking person's contact number input from user.
+
+
         int t=4;
-
-
         /*below while loop is to take extra inputs of contact numbers
         if user wants to add.(MAXIMUM 4 EXTRA CONTACTS NUMBERS CAN BE ADDED.)*/
         while(t>0)
@@ -60,6 +63,24 @@ class Ritik_Contact_List_App {                                          //Implem
 
         arrayList.add(person);                      /*adding the details of the person contact taken as input from user
                                                       into the list*/
+        bubblesort(arrayList);
+
+    }
+
+    public void bubblesort(ArrayList<Person> arrayList)
+    {
+        if(arrayList.size()>1) {
+            Person temp;
+            for (int i = 0; i < arrayList.size()-1; i++) {
+                for (int j = 0; j < arrayList.size() - 1-i; j++) {
+                    if ((arrayList.get(i).getFirst_Name()).compareTo(arrayList.get(i + 1).getFirst_Name()) > 0) {
+                        temp = arrayList.get(i);
+                        arrayList.set(i, arrayList.get(i + 1));
+                        arrayList.set(i + 1, temp);
+                    }
+                }
+            }
+        }
     }
     public void viewContacts()                      //method to display the contact of all person stored in the list by the user.
     {
@@ -144,9 +165,6 @@ class Ritik_Contact_List_App {                                          //Implem
     }
 
 }
-
-
-
 
 class Ritik_Contact_List_App_Main                            //main method class.
 {
